@@ -37,7 +37,7 @@ jobs:
 
       - name: Build signed debug APK
         env:
-          VACA_KEYSTORE: app/vaca.keystore
+          VACA_KEYSTORE: vaca.keystore
           VACA_STORE_PASSWORD: ${{ secrets.VACA_STORE_PASSWORD }}
           VACA_KEY_ALIAS: ${{ secrets.VACA_KEY_ALIAS }}
           VACA_KEY_PASSWORD: ${{ secrets.VACA_KEY_PASSWORD }}
