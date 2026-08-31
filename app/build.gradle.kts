@@ -46,10 +46,10 @@ android {
 
     signingConfigs {
         create("release") {
-            storeFile = file(System.getenv("KEYSTORE_FILE") ?: "release.keystore")
-            storePassword = System.getenv("KEYSTORE_PASSWORD")
-            keyAlias = System.getenv("KEY_ALIAS")
-            keyPassword = System.getenv("KEY_PASSWORD")
+            storeFile = file(System.getenv("VACA_KEYSTORE") ?: System.getenv("KEYSTORE_FILE") ?: "release.keystore")
+            storePassword = System.getenv("VACA_STORE_PASSWORD") ?: System.getenv("KEYSTORE_PASSWORD")
+            keyAlias = System.getenv("VACA_KEY_ALIAS") ?: System.getenv("KEY_ALIAS")
+            keyPassword = System.getenv("VACA_KEY_PASSWORD") ?: System.getenv("KEY_PASSWORD")
         }
     }
 
@@ -60,6 +60,7 @@ android {
                 abiFilters.add("arm64-v8a")
                 abiFilters.add("armeabi-v7a")
             }
+            signingConfig = signingConfigs.getByName("release")
         }
         release {
             isMinifyEnabled = true
