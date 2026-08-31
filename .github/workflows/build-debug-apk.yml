@@ -5,6 +5,7 @@ on:
     branches:
       - feature/*
       - more-commands*
+      - dev_13_0
   workflow_dispatch:
 
 jobs:
