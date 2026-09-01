@@ -6,6 +6,7 @@ on:
       - feature/*
       - more-commands*
       - dev_13_0
+      - fix-lenovo-alexadock
   workflow_dispatch:
 
 jobs:
