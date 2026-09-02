@@ -225,7 +225,7 @@ class MicrophoneInput (
             Timber.d("MIC Device: ${device.productName}, type: ${getDeviceTypeName(device.type)}")
         }
 
-        val bypassBluetoothMic = true
+        val bypassBluetoothMic = config.bypassBluetoothMic
 
         val usbDevice = devices.firstOrNull { isUsbMic(it) }
         val bluetoothDevice = if (bypassBluetoothMic) null else devices.firstOrNull { isBluetoothMic(it) }
